@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+    <h1 id="home_h1">Welcome to Mr.Blog</h1>
+
+    <form action="" method="get">
+        <i class="fa-solid fa-magnifying-glass" id="search-icon"></i>
+        <input type="text" name="search" id="searchbar">
+    </form>
+
+    {% for article in articles %}
+
+    <a href="{% url 'article' article.id %} "> 
+    <div id = "home_task_view"><div class="home_task_title"> {{ article.title }} </div><br>
+        <p class="home_author">{{article.author}}</p>
+    </div>
+    </a>
+
+    {% endfor %}
+{% endblock content %}

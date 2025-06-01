@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+    <div id="article_container">
+        <h1 id="article_title">{{ article.title }}</h1>
+        <p id="article_author">{{ article.author }}</p>
+        <p id="article_pubtime"> <b>Published On</b> : {{ article.publishedtime }} UTC</p>
+        <p id="article_dis">{{ article.discription }}</p>
+    
+        {% if article.images %}
+        <p>Article Related Images</p>
+        <img src="{{ article.images.url }}" alt="Unable to load images" height="300px">
+        {% endif %}
+    </div>
+    <a href="{% url 'home' %}"><button id="backbutton"><i class="fa-solid fa-arrow-left"></i></div></button></a>
+
+{% endblock content %}
